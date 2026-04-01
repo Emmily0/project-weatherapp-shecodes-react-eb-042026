@@ -94,7 +94,7 @@ export default function WeatherSearch() {
 
   function getColor(icon) {
     if (icon.includes("night")) {
-      return "darkblue";
+      return "#28c4b7";
     }
     if (icon === "clear-sky-day") {
       return "goldenrod";
@@ -113,25 +113,23 @@ export default function WeatherSearch() {
       return (
         <ul>
           <li>
-            <span>Temperature: {Math.round(weather.temperature)}°C</span>
+            Temperature: <span>{Math.round(weather.temperature)}°C</span>
           </li>
           <li>
-            <span>Description: {weather.description}</span>
+            Description: <span>{weather.description}</span>
           </li>
           <li>
-            <span>Humidity: {weather.humidity}%</span>
+            Humidity: <span>{weather.humidity}%</span>
           </li>
           <li>
-            <span>Wind: {weather.wind}km/h</span>
+            Wind: <span> {weather.wind}km/h</span>
           </li>
-          <li>
             <ReactAnimatedWeather
               icon={animatedIcon}
               color={color}
               size={50}
               animate={true}
             />
-          </li>
         </ul>
       );
     } else {
